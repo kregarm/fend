@@ -131,10 +131,10 @@ article {
 .full-blog-post{
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: 50px repeat(3, 1fr);
+    grid-template-rows: 400px 50px repeat(2, 1fr);
     grid-template-areas:
-    "tt tt tt tt"
     "img img img img"
+    "tt tt tt tt"
     "ct ct ct ct"
     "sh sh sh sh"
     "bt bt bt bt";
