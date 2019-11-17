@@ -1,21 +1,21 @@
-body{
+body {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: 80px auto;
-    grid-template-areas:
-    "he he he he"
-    "sb ar ar ar"
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas: 
+    "he he he he" 
+    "sb ar ar ar" 
     "ft ft ft ft";
     grid-column-gap: 10px;
     grid-row-gap: 10px;
     background-color: #f0f0f0;
     max-width: 960px;
-    min-width: 320px;
+    height: 100%;
     margin: auto;
-    font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
 }
 
-header{
+header {
     grid-area: he;
     display: flex;
     justify-content: space-between;
@@ -23,7 +23,7 @@ header{
     border-bottom: 1px solid #d9d9d9;
 }
 
-.title{
+.title {
     line-height: 35px;
     margin-left: 10px;
 }
@@ -34,16 +34,16 @@ li {
     line-height: 50px;
 }
 
-li:hover{
+li:hover {
     text-decoration: underline;
 }
 
-aside{
+aside {
     grid-area: sb;
     background-color: #fff;
     padding: 10px 10px;
     margin: 10px 10px;
-    height: 400px;
+    height: 450px;
     border-radius: 5px;
     border: 1px solid #d9d9d9
 }
@@ -56,7 +56,7 @@ aside{
     margin: auto;
 }
 
-section{
+section {
     grid-area: ar;
 }
 
@@ -69,18 +69,17 @@ article {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: 50px 150px 30px;
-    grid-template-areas:
-    "tt tt tt tt"
-    "img ct ct ct"
+    grid-template-areas: 
+    "tt tt tt tt" 
+    "img ct ct ct" 
     "bt bt bt bt";
     grid-column-gap: 10px;
     grid-row-gap: 10px;
-
 }
 
 .article_button {
     grid-area: bt;
-    background-color:  #5f2d9c;
+    background-color: #5f2d9c;
     color: #fff;
     width: 150px;
     height: 30px;
@@ -92,21 +91,21 @@ article {
     font-size: 0.8em;
 }
 
-.article_button:hover{
+.article_button:hover {
     font-weight: bold;
 }
 
-.article_title{
+.article_title {
     grid-area: tt;
     margin-top: 15px;
 }
 
-.article_content{
+.article_content {
     grid-area: ct;
     color: #333;
 }
 
-.article_image{
+.article_image {
     grid-area: img;
     width: 150px;
     height: 150px;
@@ -114,87 +113,103 @@ article {
     border-radius: 5px;
 }
 
-.img1{
+.img1 {
     background-image: url('images/article_image1.jpg');
 }
 
-.img2{
+.img2 {
     background-image: url('images/article_image2.jpg');
 }
 
-.img3{
+.img3 {
     background-image: url('images/article_image3.jpg');
 }
 
-.img4{
+.img4 {
     background-image: url('images/article_image4.jpeg');
 }
 
-.full-blog-post{
+.full-blog-post {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: 400px 50px repeat(2, 1fr);
-    grid-template-areas:
-    "img img img img"
-    "tt tt tt tt"
-    "ct ct ct ct"
-    "sh sh sh sh"
+    grid-template-rows: auto;
+    grid-template-areas: 
+    "img img img img" 
+    "tt tt tt tt" 
+    "ct ct ct ct" 
     "bt bt bt bt";
     grid-column-gap: 10px;
     grid-row-gap: 10px;
-    height: 850px;
 }
 
-.fbp-image{
+.fbp-image {
     grid-area: img;
     width: 100%;
     height: 400px;
+    background-position: center;
 }
 
-footer{
+footer {
     grid-area: ft;
+    background-color: #fff;
+    width: 100%;
 }
 
-
-@media (max-width: 800px) {
-body{
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: 80px auto;
-    grid-template-areas:
-    "he he he he"
-    "ar ar ar ar"
-    "sb sb sb sb"
-    "ft ft ft ft";
-    grid-column-gap: 10px;
-    grid-row-gap: 10px;
-    background-color: #f0f0f0;
-    max-width: 960px;
-    margin: auto;
+.fbp-content {
+    padding-left: 10%;
+    padding-right: 10%;
 }
 
-aside {
+.fbp-title {
     text-align: center;
 }
 
-  }
-  
-  @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
-    
-    
-    
-  }
+.fbp-button {
+    margin: auto;
+}
 
-  
-  @media (min-width: 481px) and (max-width: 767px) {
-    
-   
-    
-  }
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {}
 
-  
-  @media (min-width: 320px) and (max-width: 480px) {
-    
-    
-    
-  }
+@media (max-width: 767px) {
+    article {
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: 50px 150px 1fr 30px;
+        grid-template-areas: "tt tt tt tt" "img img img img" "ct ct ct ct" "bt bt bt bt";
+    }
+    body {
+        min-width: 320px;
+        grid-template-areas: "he he he he" "ar ar ar ar" "sb sb sb sb" "ft ft ft ft";
+    }
+    aside {
+        text-align: center;
+    }
+    .article_image {
+        width: 100%;
+        background-position: center;
+    }
+    .article_button {
+        width: 250px;
+        margin: auto;
+    }
+}
+
+@media (max-width: 440px) {
+    body {
+        grid-template-rows: auto;
+    }
+    header {
+        flex-flow: column wrap;
+        justify-content: center;
+    }
+    li {
+        display: block;
+        text-align: center;
+        border-bottom: 1px solid #333;
+    }
+    li:first-child {
+        border-top: 1px solid #333;
+    }
+    .title {
+        text-align: center;
+    }
+}
