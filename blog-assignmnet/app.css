@@ -56,6 +56,10 @@ aside {
     margin: auto;
 }
 
+figure{
+    margin: 0px;
+}
+
 .sidebar-text{
     font-size: 0.9em;
 }
@@ -136,7 +140,7 @@ article {
 .full-blog-post {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: auto;
+    grid-template-rows: 440px auto;
     grid-template-areas:
     "img img img img"
     "he he he he"
@@ -146,6 +150,11 @@ article {
     "bt bt bt bt";
     grid-column-gap: 10px;
     grid-row-gap: 10px;
+}
+
+figcaption {
+    font-size: 0.8em;
+    color:#333
 }
 
 .fbp-header {
