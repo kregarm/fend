@@ -48,7 +48,7 @@ aside {
     border: 1px solid #d9d9d9
 }
 
-.aside_image {
+.avatar-image {
     background-image: url('images/avatar.png');
     border-radius: 100%;
     width: 200px;
@@ -134,12 +134,33 @@ article {
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: auto;
     grid-template-areas: 
-    "img img img img" 
+    "img img img img"
+    "he he he he" 
     "tt tt tt tt" 
-    "ct ct ct ct" 
+    "ct ct ct ct"
+    "sc sc sc sc" 
     "bt bt bt bt";
     grid-column-gap: 10px;
     grid-row-gap: 10px;
+}
+
+.fbp-header {
+    grid-area: he;
+    margin: auto;
+    display: flex;
+    flex-flow: column wrap;
+}
+
+.article-info-text{
+    font-weight: bold;
+}
+
+.fbp-title {
+    text-align: center;
+}
+
+.article-info {
+    font-size: 0.9em;
 }
 
 .fbp-image {
@@ -147,6 +168,44 @@ article {
     width: 100%;
     height: 400px;
     background-position: center;
+}
+
+.social-share-buttons {
+    grid-area: sc;
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 10px;
+}
+
+.fa {
+    font-size: 16px;
+    display: inline-block;
+    width: 150px;
+    height: 30px;
+    font-weight: bold;
+    border-radius: 5px;
+    text-align: center;
+    text-decoration: none;
+    line-height: 30px;
+}
+
+.fa:hover {
+    opacity: 0.8;
+}
+
+.fa-facebook {
+    background: #3B5998;
+    color: white;
+}
+
+.fa-twitter {
+    background: #55ACEE;
+    color: white;
+}
+
+.fa-linkedin {
+    background: #4875B4;
+    color: white;
 }
 
 footer {
@@ -160,15 +219,9 @@ footer {
     padding-right: 10%;
 }
 
-.fbp-title {
-    text-align: center;
-}
-
 .fbp-button {
     margin: auto;
 }
-
-@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {}
 
 @media (max-width: 767px) {
     article {
@@ -191,6 +244,10 @@ footer {
         width: 250px;
         margin: auto;
     }
+    .fa {
+        height: 40px;
+        line-height: 40px;
+    }
 }
 
 @media (max-width: 440px) {
@@ -211,5 +268,12 @@ footer {
     }
     .title {
         text-align: center;
+    }
+    .social-share-buttons{
+        flex-flow: column wrap;
+    }
+    .fa {
+        margin: auto;
+        margin-top: 10px;
     }
 }

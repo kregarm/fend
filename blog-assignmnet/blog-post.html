@@ -4,6 +4,7 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Personal blog page - FEND 1st assignmnet</title>
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <link rel="stylesheet" href="app.css" type="text/css">
 </head>
 
@@ -19,20 +20,25 @@
         </nav>
     </header>
     <aside class="sidebar">
-        <div class="aside_image"></div>
+        <div class="avatar-image"></div>
         <h3>Who am I?</h3>
         <p><em>This is just some placehodeler text to describe how awesome I am</em></p>
         <hr>
         <p>Social</p>
         <button>Facebook</button>
         <button>Twitter</button>
-        <button>Instagram</button>
+        <button>LinkedIn</button>
     </aside>
     <section class="article_list">
         <article class="full-blog-post">
             <div class="article_image img1 fbp-image"></div>
-            <header>
-            <h2 class="article_title fbp-title">Title of the post</h2>
+            <header class="fbp-header">
+                <h2 class="article_title fbp-title">Title of the post</h2>
+                <div class="article-info">
+                    <p><span class="article-info-text">Author:</span> Lorem Ipsum Generator</p>
+                    <p><span class="article-info-text">Excerpt:</span> This is just a generic lorem ipsum text beacuse I really don't have
+                        the time to write an actual blog post.</p>
+                </div>
             </header>
             <p class="article_content fbp-content">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut nec magna interdum libero 
@@ -63,7 +69,13 @@
                 diam maximus. Nulla ultrices, ligula sit amet finibus ornare, massa libero commodo erat, 
                 quis semper ante tellus ut ligula. Aenean euismod felis eros, non cursus mauris tempor a. 
                 Suspendisse in nunc et turpis dapibus interdum id a lorem. Nam viverra nisi nec tellus 
-                dignissim elementum.</p>
+                dignissim elementum.
+            </p>
+            <div class="social-share-buttons">
+                <a href="#" class="fa fa-facebook"></a>
+                <a href="#" class="fa fa-twitter"></a>
+                <a href="#" class="fa fa-linkedin"></a>
+            </div>
             <a class="article_button fbp-button" href="index.html">Back to main page</a>
         </article>
     </section>
