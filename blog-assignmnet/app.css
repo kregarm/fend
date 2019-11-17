@@ -2,13 +2,13 @@ body {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: auto 1fr auto;
-    grid-template-areas: 
-    "he he he he" 
-    "sb ar ar ar" 
+    grid-template-areas:
+    "he he he he"
+    "sb ar ar ar"
     "ft ft ft ft";
     grid-column-gap: 10px;
     grid-row-gap: 10px;
-    background-color: #f0f0f0;
+    background: #f0f0f0;
     max-width: 960px;
     height: 100%;
     margin: auto;
@@ -19,7 +19,7 @@ header {
     grid-area: he;
     display: flex;
     justify-content: space-between;
-    background-color: #fff;
+    background: #fff;
     border-bottom: 1px solid #d9d9d9;
 }
 
@@ -40,10 +40,10 @@ li:hover {
 
 aside {
     grid-area: sb;
-    background-color: #fff;
+    background: #fff;
     padding: 10px 10px;
     margin: 10px 10px;
-    height: 450px;
+    height: 560px;
     border-radius: 5px;
     border: 1px solid #d9d9d9
 }
@@ -56,12 +56,16 @@ aside {
     margin: auto;
 }
 
+.sidebar-text{
+    font-size: 0.9em;
+}
+
 section {
     grid-area: ar;
 }
 
 article {
-    background-color: #fff;
+    background: #fff;
     margin: 10px 10px;
     padding: 10px 10px;
     border-radius: 5px;
@@ -69,17 +73,17 @@ article {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: 50px 150px 30px;
-    grid-template-areas: 
-    "tt tt tt tt" 
-    "img ct ct ct" 
+    grid-template-areas:
+    "tt tt tt tt"
+    "img ct ct ct"
     "bt bt bt bt";
     grid-column-gap: 10px;
     grid-row-gap: 10px;
 }
 
-.article_button {
+.article-button {
     grid-area: bt;
-    background-color: #5f2d9c;
+    background: #5f2d9c;
     color: #fff;
     width: 150px;
     height: 30px;
@@ -91,21 +95,21 @@ article {
     font-size: 0.8em;
 }
 
-.article_button:hover {
+.article-button:hover {
     font-weight: bold;
 }
 
-.article_title {
+.article-title {
     grid-area: tt;
     margin-top: 15px;
 }
 
-.article_content {
+.article-content {
     grid-area: ct;
     color: #333;
 }
 
-.article_image {
+.article-image {
     grid-area: img;
     width: 150px;
     height: 150px;
@@ -133,12 +137,12 @@ article {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: auto;
-    grid-template-areas: 
+    grid-template-areas:
     "img img img img"
-    "he he he he" 
-    "tt tt tt tt" 
+    "he he he he"
+    "tt tt tt tt"
     "ct ct ct ct"
-    "sc sc sc sc" 
+    "sc sc sc sc"
     "bt bt bt bt";
     grid-column-gap: 10px;
     grid-row-gap: 10px;
@@ -223,27 +227,46 @@ footer {
     margin: auto;
 }
 
+.footer-nav {
+    display: flex;
+    justify-content: center;
+}
+
 @media (max-width: 767px) {
+
     article {
         grid-template-columns: repeat(4, 1fr);
         grid-template-rows: 50px 150px 1fr 30px;
-        grid-template-areas: "tt tt tt tt" "img img img img" "ct ct ct ct" "bt bt bt bt";
+        grid-template-areas:
+        "tt tt tt tt"
+        "img img img img"
+        "ct ct ct ct"
+        "bt bt bt bt";
     }
+
     body {
         min-width: 320px;
-        grid-template-areas: "he he he he" "ar ar ar ar" "sb sb sb sb" "ft ft ft ft";
+        grid-template-areas:
+        "he he he he"
+        "ar ar ar ar"
+        "sb sb sb sb"
+        "ft ft ft ft";
     }
+
     aside {
         text-align: center;
     }
-    .article_image {
+
+    .article-image {
         width: 100%;
         background-position: center;
     }
-    .article_button {
+
+    .article-button {
         width: 250px;
         margin: auto;
     }
+
     .fa {
         height: 40px;
         line-height: 40px;
@@ -251,29 +274,40 @@ footer {
 }
 
 @media (max-width: 440px) {
+
     body {
         grid-template-rows: auto;
     }
+
     header {
         flex-flow: column wrap;
         justify-content: center;
     }
+
     li {
         display: block;
         text-align: center;
         border-bottom: 1px solid #333;
     }
+
     li:first-child {
         border-top: 1px solid #333;
     }
+
     .title {
         text-align: center;
     }
+
     .social-share-buttons{
         flex-flow: column wrap;
     }
+
     .fa {
         margin: auto;
         margin-top: 10px;
+    }
+
+    .footer-ul {
+        width: 100%;
     }
 }
