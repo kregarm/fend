@@ -1,0 +1,52 @@
+article {
+    background: #fff;
+    margin: 10px 10px;
+    padding: 10px 10px;
+    border-radius: 5px;
+    border: 1px solid #d9d9d9;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 50px 150px 30px;
+    grid-template-areas:
+    "tt tt tt tt"
+    "img ct ct ct"
+    "bt bt bt bt";
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+}
+
+.article-button {
+    grid-area: bt;
+    background: #5f2d9c;
+    color: #fff;
+    width: 150px;
+    height: 30px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    text-align: center;
+    line-height: 30px;
+    font-size: 0.8em;
+}
+
+.article-button:hover {
+    font-weight: bold;
+}
+
+.article-title {
+    grid-area: tt;
+    margin-top: 15px;
+}
+
+.article-content {
+    grid-area: ct;
+    color: #333;
+}
+
+.article-image {
+    grid-area: img;
+    width: 150px;
+    height: 150px;
+    background-size: cover;
+    border-radius: 5px;
+}

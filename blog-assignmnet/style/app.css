@@ -1,0 +1,152 @@
+@import url("https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
+@import "article.css";
+@import "header.css";
+@import "blog-page.css";
+
+body {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas:
+    "he he he he"
+    "sb ar ar ar"
+    "ft ft ft ft";
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+    background: #f0f0f0;
+    max-width: 960px;
+    height: 100%;
+    margin: auto;
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+}
+
+aside {
+    grid-area: sb;
+    background: #fff;
+    padding: 10px 10px;
+    margin: 10px 10px;
+    height: 560px;
+    border-radius: 5px;
+    border: 1px solid #d9d9d9
+}
+
+.avatar-image {
+    background-image: url('../images/avatar.png');
+    border-radius: 100%;
+    width: 200px;
+    height: 200px;
+    margin: auto;
+}
+
+figure{
+    margin: 0px;
+}
+
+.sidebar-text{
+    font-size: 0.9em;
+}
+
+section {
+    grid-area: ar;
+}
+
+.img1 {
+    background-image: url('../images/article_image1.jpg');
+}
+
+.img2 {
+    background-image: url('../images/article_image2.jpg');
+}
+
+.img3 {
+    background-image: url('../images/article_image3.jpg');
+}
+
+.img4 {
+    background-image: url('../images/article_image4.jpeg');
+}
+
+.footer-nav {
+    display: flex;
+    justify-content: center;
+}
+
+@media (max-width: 767px) {
+
+    article {
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: 50px 150px 1fr 30px;
+        grid-template-areas:
+        "tt tt tt tt"
+        "img img img img"
+        "ct ct ct ct"
+        "bt bt bt bt";
+    }
+
+    body {
+        min-width: 320px;
+        grid-template-areas:
+        "he he he he"
+        "ar ar ar ar"
+        "sb sb sb sb"
+        "ft ft ft ft";
+    }
+
+    aside {
+        text-align: center;
+    }
+
+    .article-image {
+        width: 100%;
+        background-position: center;
+    }
+
+    .article-button {
+        width: 250px;
+        margin: auto;
+    }
+
+    .fa {
+        height: 40px;
+        line-height: 40px;
+    }
+}
+
+@media (max-width: 440px) {
+
+    body {
+        grid-template-rows: auto;
+    }
+
+    header {
+        flex-flow: column wrap;
+        justify-content: center;
+    }
+
+    li {
+        display: block;
+        text-align: center;
+        border-bottom: 1px solid #333;
+    }
+
+    li:first-child {
+        border-top: 1px solid #333;
+    }
+
+    .title {
+        text-align: center;
+    }
+
+    .social-share-buttons{
+        flex-flow: column wrap;
+    }
+
+    .fa {
+        margin: auto;
+        margin-top: 10px;
+    }
+
+    .footer-ul {
+        width: 100%;
+    }
+}

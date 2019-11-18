@@ -1,0 +1,104 @@
+.full-blog-post {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 440px auto;
+    grid-template-areas:
+    "img img img img"
+    "he he he he"
+    "tt tt tt tt"
+    "ct ct ct ct"
+    "sc sc sc sc"
+    "bt bt bt bt";
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+}
+
+figcaption {
+    font-size: 0.8em;
+    color:#333
+}
+
+.fbp-header {
+    grid-area: he;
+    margin: auto;
+    display: flex;
+    flex-flow: column wrap;
+}
+
+.article-info-text{
+    font-weight: bold;
+}
+
+.fbp-title {
+    text-align: center;
+}
+
+.article-info {
+    font-size: 0.9em;
+}
+
+.fbp-article-image {
+    grid-area: img;
+    width: 100%;
+    height: 400px;
+}
+
+.fbp-image {
+    background-position: center;
+    grid-area: img;
+    width: 100%;
+    height: 400px;
+}
+
+.social-share-buttons {
+    grid-area: sc;
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 10px;
+}
+
+.fa {
+    font-size: 16px;
+    display: inline-block;
+    width: 150px;
+    height: 30px;
+    font-weight: bold;
+    border-radius: 5px;
+    text-align: center;
+    text-decoration: none;
+    line-height: 30px;
+}
+
+.fa:hover {
+    opacity: 0.8;
+}
+
+.fa-facebook {
+    background: #3B5998;
+    color: white;
+}
+
+.fa-twitter {
+    background: #55ACEE;
+    color: white;
+}
+
+.fa-linkedin {
+    background: #4875B4;
+    color: white;
+}
+
+footer {
+    grid-area: ft;
+    background-color: #fff;
+    width: 100%;
+}
+
+.fbp-content {
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+.fbp-button {
+    margin: auto;
+}
