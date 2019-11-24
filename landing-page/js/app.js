@@ -18,7 +18,6 @@
  * 
 */
 
-
 /**
  * End Global Variables
  * Start Helper Functions
@@ -34,7 +33,30 @@
 */
 
 // build the nav
+function buildNav() {
 
+    let navItems = document.getElementsByTagName('h2');
+
+    let navFragment = document.createDocumentFragment();
+
+    for (navItem of navItems) {
+
+        let newLiElement = document.createElement('li');
+        newLiElement.classList.add('navbar__menu', 'li');
+
+        let newAnchorElement = document.createElement('a');
+        newAnchorElement.classList.add('navbar__menu', 'menu__link');
+
+        newAnchorElement.innerText = navItem.innerText;
+        
+        newLiElement.appendChild(newAnchorElement);
+        navFragment.appendChild(newLiElement);
+    };
+
+    let navMenu = document.getElementById('navbar__list');
+    navMenu.appendChild(navFragment);
+
+};
 
 // Add class 'active' to section when near top of viewport
 
@@ -45,11 +67,11 @@
 /**
  * End Main Functions
  * Begin Events
- * 
+ *
 */
 
 // Build menu 
-
+buildNav();
 // Scroll to section on link click
 
 // Set sections as active
