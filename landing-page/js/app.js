@@ -17,38 +17,36 @@
  * Define Global Variables
  * 
 */
+let navItems = document.getElementsByTagName('h2');
 
 /**
  * End Global Variables
- * Start Helper Functions
- * 
 */
 
 
 
 /**
- * End Helper Functions
  * Begin Main Functions
- * 
 */
 
 // build the nav
 function buildNav() {
 
-    let navItems = document.getElementsByTagName('h2');
-
     let navFragment = document.createDocumentFragment();
 
-    for (navItem of navItems) {
+    for (let i=0 ; i < navItems.length; i++) {
 
         let newLiElement = document.createElement('li');
         newLiElement.classList.add('navbar__menu', 'li');
 
         let newAnchorElement = document.createElement('a');
         newAnchorElement.classList.add('navbar__menu', 'menu__link');
+        newAnchorElement.id = i;
+        newAnchorElement.innerText = navItems[i].innerText;
+        newAnchorElement.addEventListener('click', function(event){
+            scrollIntoView(i);
+        });
 
-        newAnchorElement.innerText = navItem.innerText;
-        
         newLiElement.appendChild(newAnchorElement);
         navFragment.appendChild(newLiElement);
     };
@@ -62,17 +60,13 @@ function buildNav() {
 
 
 // Scroll to anchor ID using scrollTO event
-
-
-/**
- * End Main Functions
- * Begin Events
- *
-*/
+function scrollIntoView(id) {
+    element = navItems[id];
+    element.scrollIntoView();
+};
 
 // Build menu 
 buildNav();
-// Scroll to section on link click
 
 // Set sections as active
 
