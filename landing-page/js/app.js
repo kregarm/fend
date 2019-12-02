@@ -64,7 +64,7 @@ function buildNav() {
 // Get position of section elements
 document.addEventListener('scroll', function() {
     for(section of sections) {
-        var rect = section.getBoundingClientRect();
+        let rect = section.getBoundingClientRect();
         let position = rect.top;
 
         // Convert negative numbers into positive for easier comparisons
