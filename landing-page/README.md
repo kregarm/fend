@@ -1,13 +1,15 @@
 # Landing Page Project
 
-## Table of Contents
+Second project for Udacity Front end developer nanodegree. A simple landing page with dynamically created navigation bar.
 
-* [Instructions](#instructions)
+## Installation
+
+No installation needed. Just copy the project and start editing the files.
 
 ## Instructions
 
-The starter project has some HTML and CSS styling to display a static version of the Landing Page project. You'll need to convert this project from a static project to an interactive one. This will require modifying the HTML and CSS files, but primarily the JavaScript file.
-
-To get started, open `js/app.js` and start building out the app's functionality
-
-For specific, detailed instructions, look at the project instructions in the Udacity Classroom.
+By default the index.html contains 4 sections. You can add more, just be sure to follow the convetion of increasing the ID and data-nav property by one like it's shown here. 
+```
+<section id="section4" data-nav="Section 4">
+```
+Navigation will be automatically created for your sections, as well as the action to highlight the section closest to the top.
