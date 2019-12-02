@@ -37,7 +37,7 @@ function buildNav() {
 
     let navFragment = document.createDocumentFragment();
 
-    for (let i=0 ; i < sectionHeadings.length; i++) {
+    for (let i=0 ; i<sectionHeadings.length; i++) {
 
         let newLiElement = document.createElement('li');
         newLiElement.classList.add('navbar__menu', 'li');
@@ -55,7 +55,7 @@ function buildNav() {
 
         newLiElement.appendChild(newAnchorElement);
         navFragment.appendChild(newLiElement);
-    };
+    }
 
     let navMenu = document.getElementById('navbar__list');
     navMenu.appendChild(navFragment);
@@ -70,10 +70,10 @@ document.addEventListener('scroll', function() {
         // Convert negative numbers into positive for easier comparisons
         if(position < 0) {
             position = Math.abs(position);
-        };
+        }
 
         addSectionsToArray(section.attributes[1].nodeValue, position);
-    };
+    }
 
 });
 
@@ -86,13 +86,13 @@ function addSectionsToArray(section, position){
         for (sectionFromArray of sectionPosition) {
             if(sectionFromArray[0] === section) {
                 sectionFromArray[1] = position;
-            };
+            }
         }
 
         // First element is by default set to active
         firstItem = sectionPosition[0];
         findElementClosestToTheTop();
-    };
+    }
 
 }
 
@@ -109,7 +109,7 @@ function findElementClosestToTheTop() {
             firstItem = sectionPosition[k];
             pos = k;
         }
-    };
+    }
 
     addClass(pos);
 }
