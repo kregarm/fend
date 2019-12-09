@@ -1,9 +1,8 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
-let appData = {}; //This will act as the DB, which is not a part of this assignemnt
+let appData = {fakeDb:[]}; //This will act as the DB, which is not a part of this assignemnt
 let id = 0; //This will act as and ID; it gets autoincremented in the app.post function
-
 var app = express();
 
 app.use(bodyParser.urlencoded({ extended:false }));
@@ -23,9 +22,8 @@ app.post('/getData', (req, res) => {
     temObj.feelings = req.body.feelings;
     temObj.weather = req.body.weather;
 
-    appData = Object.assign(appData, temObj)
+    appData.fakeDb.push(temObj);
     id++;
 
-    console.log('appData is', appData)
     res.send(appData);
 })
