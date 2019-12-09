@@ -15,7 +15,7 @@ app.listen(port, () => {
     console.log(`server running on port ${port}.`);
 })
 
-app.post('/getData', (req, res) => {
+app.post('/get-data', (req, res) => {
     temObj = {};
     temObj.id = id;
     temObj.city = req.body.city;
@@ -25,5 +25,5 @@ app.post('/getData', (req, res) => {
     appData.fakeDb.push(temObj);
     id++;
 
-    res.send(appData);
+    res.send(temObj);
 })

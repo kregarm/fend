@@ -2,6 +2,7 @@
 body {
     font-family: 'Bebas Neue', cursive;
     margin: 0px;
+    min-width: 320px;
 }
 
 header {
@@ -47,4 +48,49 @@ button {
     border: none;
     font-family: inherit;
     margin: 10px auto;
+}
+
+.post {
+    width: 90%;
+    padding: 10px;
+    border: 2px solid #000;
+    margin: auto;
+    margin-bottom: 10px;
+}
+
+.post h3 {
+    text-align: center;
+}
+
+img {
+    display: block;
+    width: 50px;
+    margin: auto;
+}
+
+@media only screen and (min-width: 600px) {
+
+    #posts {
+        display: flex;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+    }
+
+    .post {
+        width: 250px;
+    }
+
+}
+
+@media only screen and (min-width: 1000px) {
+
+    body {
+        max-width: 1024px;
+        margin: auto;
+    }
+
+    .post {
+        width: 300px;
+    }
+
 }
