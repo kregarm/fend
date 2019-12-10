@@ -11,4 +11,4 @@ This is just a simple MVC app built with nodejs and express. It utilises a third
 
 ## Instructions
 Run ```npm install``` to install dependencies.
-Run ```node app.js``` to start the server. Go to ```http://localhost:8000/``` and start adding entries.
+Run ```node server.js``` to start the server. Go to ```http://localhost:8000/``` and start adding entries.
