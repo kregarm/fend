@@ -50,7 +50,7 @@ button.addEventListener('click', () => {
 AddElementsToPage = function (element) {
 
     let newDiv = document.createElement('div');
-    newDiv.classList.add('entryHolder')
+    newDiv.classList.add('entryHolder');
 
     let newHeading = document.createElement('h3');
     newHeading.innerText = `Selected city: ${element.city}, date: ${element.date}`;
