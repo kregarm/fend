@@ -50,15 +50,16 @@ button {
     margin: 10px auto;
 }
 
-.post {
+.entryHolder {
     width: 90%;
+    height: 250px;
     padding: 10px;
     border: 2px solid #000;
     margin: auto;
     margin-bottom: 10px;
 }
 
-.post h3 {
+.entryHolder h3 {
     text-align: center;
 }
 
@@ -76,7 +77,7 @@ img {
         flex-wrap: wrap;
     }
 
-    .post {
+    .entryHolder {
         width: 250px;
     }
 
@@ -89,7 +90,7 @@ img {
         margin: auto;
     }
 
-    .post {
+    .entryHolder {
         width: 300px;
     }
 

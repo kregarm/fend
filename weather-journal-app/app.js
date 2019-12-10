@@ -21,6 +21,8 @@ app.post('/get-data', (req, res) => {
     temObj.city = req.body.city;
     temObj.feelings = req.body.feelings;
     temObj.weather = req.body.weather;
+    temObj.temp = req.body.temp;
+    temObj.date = req.body.date;
 
     appData.fakeDb.push(temObj);
     id++;
