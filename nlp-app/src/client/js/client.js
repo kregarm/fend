@@ -1,4 +1,8 @@
 const submitButton = document.getElementById('submit');
 submitButton.addEventListener('click', () => {
-    console.log('This works')
+    fetch('http://localhost:8081/test')
+    .then(() => {
+    })
+    .catch((err) => {
+    })
 })
