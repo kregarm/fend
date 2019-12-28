@@ -12,7 +12,7 @@ app.get('/', (req, res) => {
     res.sendFile('dist/index.html')
 });
 
-app.get('/isLive', (req, res) => {
+app.get('/live', (req, res) => {
     res.sendStatus(200);
 })
 
