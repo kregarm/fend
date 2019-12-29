@@ -1,6 +1,10 @@
 let online = true;
 const textArea = document.getElementById('nlp-text');
 
+function justFortest (a, b) {
+    return a+b;
+}
+
 function checkLive () {
     fetch('http://localhost:8081/live')
     .then(() => {
@@ -21,5 +25,7 @@ function checkLive () {
 function showError(err){
     alert(`This page is offline: '${err}`);
 };
-
 setInterval(checkLive, 2000);
+
+exports.justFortest = justFortest;
+exports.checkLive = checkLive;

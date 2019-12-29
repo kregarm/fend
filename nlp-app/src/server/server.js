@@ -13,6 +13,7 @@ const app = express();
 app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true}));
+
 app.use(express.static('dist'));
 
 app.get('/', (req, res) => {
@@ -23,12 +24,16 @@ app.get('/live', (req, res) => {
     res.sendStatus(200);
 })
 
-app.get('/test', (req, res) => {
-    textApi.sentiment({
-        'text': 'John is a very good football player!'
-    }, function(error, response) {
+app.post('/test', (req, res) => {
+    let content = req.body.data;
+    console.log(content)
+
+    textApi.sentiment({'text': content}, (error, response) => {
         if (error === null) {
-          console.log(response);
+            console.log(response);
+            res.send(response);
+        } else {
+            console.log(error)
         }
     });
 })
