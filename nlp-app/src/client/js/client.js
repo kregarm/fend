@@ -13,11 +13,37 @@ async function postData(url = '', data = {}) {
 
 submitButton.addEventListener('click', () => {
     let data = document.getElementById('nlp-text').value;
-    postData('http://localhost:8081/test', { data })
-        .then((data) => {
-            console.log(data);
+
+    if (data.length < 1) {
+        alert("Can't evaluate nothing, dummy")
+    } else {
+        postData('http://localhost:8081/test', { data })
+        .then((res) => {
+            console.log(res);
             document.getElementById('nlp-text').value = '';
+            addCard(res);
         }).catch((err) => {
             console.log(err);
         })
+    }
 })
+
+function addCard(data) {
+    let card = `
+    <div class="col s12 m6">
+        <div class="card blue-grey darken-1">
+            <div class="card-content white-text">
+                <span class="card-title">Evaluated text:</span>
+                <p><em>${data.text}</em></p>
+                <hr />
+                <p><strong>Polarity:</strong> ${data.polarity}, <b>confidence:</b> ${data.polarity_confidence}</p>
+                <p><strong>Subjectivity:</strong> ${data.subjectivity}, <b>confidence:</b> ${data.subjectivity_confidence}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    `
+    let cardHolder = document.getElementById("cards-holder");
+    cardHolder.insertAdjacentHTML('beforeend', card);
+    return card;
+}

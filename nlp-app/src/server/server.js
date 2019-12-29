@@ -26,16 +26,17 @@ app.get('/live', (req, res) => {
 
 app.post('/test', (req, res) => {
     let content = req.body.data;
-    console.log(content)
-
-    textApi.sentiment({'text': content}, (error, response) => {
-        if (error === null) {
-            console.log(response);
-            res.send(response);
-        } else {
-            console.log(error)
-        }
-    });
+    if (content.length < 1) {
+        res.status(500).send({error: 'input cannot be empty!'});
+    } else {
+        textApi.sentiment({'text': content}, (error, response) => {
+            if (error === null) {
+                res.send(response);
+            } else {
+                res.status(500).send({error: error});
+            }
+        });
+    };
 })
 
 app.listen(8081, () => {

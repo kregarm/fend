@@ -1,17 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <title>Document</title>
 </head>
+
 <body>
-    <section>
-        <label for="nlp-text">Send this text to Aylien API:</label>
-        <textarea id="nlp-text" name="copy" rows="5" cols="33"></textarea>
-        <button id="submit">send</button>
-    </section>
+    <div class="container">
+        <section>
+            <div class="row">
+                <form class="col s6 offset-s3">
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <textarea id="nlp-text" class="materialize-textarea"></textarea>
+                            <label for="nlp-text">Send this text to Aylien API:</label>
+                            <a class="waves-effect waves-light btn" id="submit">Submit</a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </section>
+        <section>
+            <div class="row" id="cards-holder"></div>
+        </section>
+    </div>
     <script>
         // Check that service workers are supported
         if ('serviceWorker' in navigator) {
@@ -22,4 +41,5 @@
         }
     </script>
 </body>
+
 </html>
