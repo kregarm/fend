@@ -14,6 +14,7 @@ async function postData(url = '', data = {}) {
 submitButton.addEventListener('click', () => {
     let data = document.getElementById('nlp-text').value;
 
+    // Check if the input actually containes something
     if (data.length < 1) {
         alert("Can't evaluate nothing, dummy")
     } else {

@@ -1,19 +1,19 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
-const config = require('../../config');
+require('dotenv').config()
+const port = process.env.PORT || 8081
 const aylien = require('aylien_textapi');
 
 const textApi = new aylien({
-    application_id: config.application_id,
-    application_key: config.application_key
+    application_id: process.env.APP_ID,
+    application_key: process.env.APP_KEY
 });
 
 const app = express();
 app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true}));
-
 app.use(express.static('dist'));
 
 app.get('/', (req, res) => {
@@ -39,6 +39,6 @@ app.post('/test', (req, res) => {
     };
 })
 
-app.listen(8081, () => {
-    console.log('Server listening on port 8081');
+app.listen(port, () => {
+    console.log(`Server listening on port ${port}`);
 })

@@ -1,2 +1,4 @@
 **node_modules/
 **dist/
+/nlp-app/config.js
+/nlp-app/.env
