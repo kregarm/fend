@@ -27,8 +27,8 @@ function sendData() {
                                 <span class="card-title">Evaluated text:</span>
                                 <p><em>${res.text}</em></p>
                                 <hr />
-                                <p><strong>Polarity:</strong> ${res.polarity}, <b>confidence:</b> ${res.polarity_confidence}</p>
-                                <p><strong>Subjectivity:</strong> ${res.subjectivity}, <b>confidence:</b> ${res.subjectivity_confidence}</p>
+                                <p><b>Polarity:</b> ${res.polarity}, <b>confidence:</b> ${res.polarity_confidence}</p>
+                                <p><b>Subjectivity:</b> ${res.subjectivity}, <b>confidence:</b> ${res.subjectivity_confidence}</p>
                                 </div>
                             </div>
                         </div>
@@ -42,4 +42,4 @@ function sendData() {
     };
 };
 
-export { postData, sendData }
+export { postData, sendData };
