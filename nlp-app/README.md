@@ -11,7 +11,11 @@ APP_ID=your_app_id
 APP_KEY=your_app_key
 ```
 2. Install dependencies with `npm install`
+3. Build the code with `npm run build-prod`
 3. Start the server with `npm start`
 
 ## Running tests
 Run tests with `npm test` command.
+
+## Development
+Dev webpack config is also present and it can be used by running the command `npm run build-dev`.
