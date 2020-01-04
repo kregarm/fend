@@ -4,6 +4,7 @@ const cors = require('cors');
 require('dotenv').config()
 const port = process.env.PORT || 8081
 const aylien = require('aylien_textapi');
+const regeneratorRuntime = require("regenerator-runtime");
 
 const textApi = new aylien({
     application_id: process.env.APP_ID,
