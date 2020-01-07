@@ -15,21 +15,15 @@
             <label for="place">Where to?</label>
             <input type="text" name="place" id="place">
             <label for="date">When?</label>
-            <input type="date" id="datee">
+            <input type="date" id="date">
         </form>
         <button id='submit'>Submit</button>
     </section>
     <section>
         https://coolors.co/e5d9f2-f5efff-cdc1ff-a594f9-7371fc
     </section>
-    <script>
-        const submit = document.getElementById('submit')
-        submit.addEventListener('click', () => {
-            let el1 = document.getElementById("datee");
-            console.log(el1.value)
-            let element = document.getElementById("intro-modal");
-            element.parentNode.removeChild(element);
-        })
-    </script>
+    <!-- wzrd is used for the UUIDs in localstorage-->
+    <script src="http://wzrd.in/standalone/uuid%2Fv1@latest"></script>
+    <script src="../../app.js"></script>
 </body>
 </html>
