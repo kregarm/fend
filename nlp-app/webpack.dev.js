@@ -37,6 +37,10 @@ module.exports = {
             // Automatically remove all unused webpack assets on rebuild
             cleanStaleWebpackAssets: true,
             protectWebpackAssets: false
-        })
+        }),
+        new webpack.DefinePlugin({
+            BROWSER_SUPPORTS_HTML5: true,
+            APP_ID: JSON.stringify(process.env.APP_ID)
+          })
     ]
 }

@@ -1,4 +1,5 @@
 const submit = document.getElementById('submit')
+const username = ''
 
 submit.addEventListener('click', () => {
     let dateInput = document.getElementById('date');
@@ -30,10 +31,18 @@ submit.addEventListener('click', () => {
         option.value = item
         select.add(option)
         //select.options.add(new Option(trip.destination, trip.date))
-    }
+    };
 
+    let url = `http://api.geonames.org/geoCodeAddressJSON?q=${destinationInput.value}&username=${username}`
+    fetch(url).then(function(response) {
+        return response.json();
+      }).then(function(data) {
+        console.log(data);
+      }).catch(function(e) {
+        console.log(e);
+      });
     fragement.appendChild(select)
     section.appendChild(fragement)
 
 
-})
+});

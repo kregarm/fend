@@ -41,5 +41,4 @@ function sendData() {
             });
     };
 };
-
 export { postData, sendData };
