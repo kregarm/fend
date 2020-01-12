@@ -1,6 +1,6 @@
-function displayTripsFromLocalStorage () {
+function displayTripsFromLocalStorage() {
     // Retrieve all items from localstorage
-    const items = {...localStorage};
+    const items = { ...localStorage };
 
     var section = document.getElementById('body')
     var select = document.createElement("select");
