@@ -1,12 +1,10 @@
-function getGeoData(destination) {
-    const url = encodeURI(`http://api.geonames.org/geoCodeAddressJSON?q=${destination}&username=${Client.username}`)
-    fetch(url).then(function (response) {
-        return response.json();
-      }).then(function (data) {
-        Client.getWeatherData(data.address.lat, data.address.lng)
-      }).catch(function (e) {
-        console.log(e);
-      });
-}
-
-export { getGeoData }
+function getGeoData(location) {
+  Client.postData('http://localhost:8081/get-geo-data', { location })
+    .then((res) => {
+      console.log('response is', res)
+      Client.getWeatherData(res.lat, res.lng)
+    }).catch((err) => {
+      console.log(err);
+    });
+};
+export { getGeoData };

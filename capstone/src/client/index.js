@@ -5,6 +5,7 @@ import { displayTripsFromLocalStorage } from './js/displayTripsFromLocalStorage'
 import { submit } from './js/app'
 import { username, darkSkyApiKey } from '../../config'
 import { getGeoData } from './js/getGeoData'
+import { postData } from './js/postData'
 import { getWeatherData } from './js/getWeatherData'
 
 export { 
@@ -13,5 +14,6 @@ export {
     darkSkyApiKey,
     submit,
     getGeoData,
-    getWeatherData
+    getWeatherData,
+    postData
  }
