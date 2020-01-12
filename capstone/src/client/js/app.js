@@ -1,5 +1,5 @@
 const submit = document.getElementById('submit')
-const username = 'martinkregar'
+const username = ''
 
 submit.addEventListener('click', () => {
     let dateInput = document.getElementById('date');
@@ -16,21 +16,7 @@ submit.addEventListener('click', () => {
 
     localStorage.setItem(tripId, JSON.stringify(tripData));
 
-    // to retrive trip data
-    //let trip = JSON.parse(localStorage.getItem(tripId))
-
-    const items = {...localStorage};
-
-    var section = document.getElementById('body')
-    var select = document.createElement("select");
-    let fragement = document.createDocumentFragment();
-    for (item in items) {
-        let trip = JSON.parse(localStorage.getItem(item))
-        var option = document.createElement("option");
-        option.text = `${trip.destination}, ${trip.date}`
-        option.value = item
-        select.add(option)
-    };
+    Client.displayTripsFromLocalStorage();
 
     let url = encodeURI(`http://api.geonames.org/geoCodeAddressJSON?q=${destinationInput.value}&username=${username}`)
     fetch(url).then(function(response) {
@@ -41,6 +27,4 @@ submit.addEventListener('click', () => {
       }).catch(function(e) {
         console.log(e);
       });
-    fragement.appendChild(select)
-    section.appendChild(fragement)
 });
