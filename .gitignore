@@ -2,5 +2,4 @@
 **dist/
 /nlp-app/config.js
 /nlp-app/.env
-/nlp-app/.env
 /capstone/config.js
