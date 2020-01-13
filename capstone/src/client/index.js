@@ -1,4 +1,6 @@
 import './styles/app.scss'
+import './styles/modal.scss'
+import './styles/head.scss'
 
 import './js/app'
 import { displayTripsFromLocalStorage } from './js/displayTripsFromLocalStorage'
