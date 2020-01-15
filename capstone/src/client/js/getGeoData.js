@@ -3,6 +3,7 @@ function getGeoData(location) {
     .then((res) => {
       console.log('response is', res)
       Client.getWeatherData(res.lat, res.lng)
+      Client.getImages(location)
     }).catch((err) => {
       console.log(err);
     });

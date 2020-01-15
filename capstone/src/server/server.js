@@ -12,6 +12,7 @@ app.use(bodyParser.json());
 
 app.post('/get-geo-data', (req, resp) => {
     let location = req.body.location;
+    console.log('location is ', location);
     const url = encodeURI(`http://api.geonames.org/geoCodeAddressJSON?q=${location}&username=${process.env.GEONAMES_USERNAME}`)
     request(url, { json: true}, (err, res, body) => {
         if (err) {
@@ -22,10 +23,20 @@ app.post('/get-geo-data', (req, resp) => {
 })
 
 app.post('/get-weather-data', (req, resp) => {
-    console.log(req)
     let lat = req.body.lat;
     let lng = req.body.lng
     const url = `https://api.darksky.net/forecast/${process.env.DARKSKY_API_KEY}/${lat},${lng}`;
+    request(url, { json: true}, (err, res, body) => {
+        if (err) {
+            console.log(err);
+        }
+        resp.status(200).json(body);
+    });
+})
+
+app.post('/get-images', (req, resp) => {
+    let location = req.body.location;
+    const url = encodeURI(`https://pixabay.com/api/?key=${process.env.PIXABY_API_KEY}&q=${location}&image_type=photo&category=places`) 
     request(url, { json: true}, (err, res, body) => {
         if (err) {
             console.log(err);
