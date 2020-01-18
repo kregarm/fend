@@ -41,7 +41,7 @@ app.post('/get-images', (req, resp) => {
         if (err) {
             console.log(err);
         }
-        resp.status(200).json(body);
+        resp.status(200).json(body.hits);
     });
 })
 

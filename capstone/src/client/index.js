@@ -9,6 +9,7 @@ import { getGeoData } from './js/getGeoData'
 import { postData } from './js/postData'
 import { getWeatherData } from './js/getWeatherData'
 import { getImages } from './js/getImages'
+import { storeLocationData, storeImages } from './js/storeTripData'
 
 export { 
     displayTripsFromLocalStorage,
@@ -16,5 +17,7 @@ export {
     getGeoData,
     getWeatherData,
     postData,
-    getImages
+    getImages,
+    storeLocationData,
+    storeImages
  }
