@@ -1,6 +1,7 @@
 import './styles/app.scss'
 import './styles/modal.scss'
 import './styles/head.scss'
+import './styles/images.scss'
 
 import './js/app'
 import { displayTripsFromLocalStorage } from './js/displayTripsFromLocalStorage'
@@ -10,6 +11,7 @@ import { postData } from './js/postData'
 import { getWeatherData } from './js/getWeatherData'
 import { getImages } from './js/getImages'
 import { storeLocationData, storeImages } from './js/storeTripData'
+import { setTripText, setImages } from './js/setView'
 
 export { 
     displayTripsFromLocalStorage,
@@ -19,5 +21,7 @@ export {
     postData,
     getImages,
     storeLocationData,
-    storeImages
+    storeImages,
+    setTripText,
+    setImages
  }

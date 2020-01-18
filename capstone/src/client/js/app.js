@@ -17,12 +17,15 @@ function submit() {
   }
   localStorage.setItem(tripId, JSON.stringify(tripData));
 
-  //Call the GeoData function it later calls the getImages and getWeather functions
+  //Call the GeoData function - if successful it later calls the getImages and getWeather functions
   Client.getGeoData(destinationInput.value);
 
   //Remove modal
   let element = document.getElementById('intro-modal');
   element.parentNode.removeChild(element);
+
+  //Set basic label
+  Client.setTripText(destinationInput.value);
 
   //Display a dropdown with all trips stored 
   Client.displayTripsFromLocalStorage();
