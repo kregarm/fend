@@ -12,6 +12,7 @@ function tripSwitch(id){
             Client.getWeatherData(trip.lat, trip.lng)
             Client.setTripText(trip.destination)
             Client.setImages(trip.images)
+            Client.setMapImage(trip.mapImage)
         };
     };
 }

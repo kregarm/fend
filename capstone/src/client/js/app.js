@@ -12,6 +12,7 @@ function submit() {
     'destination': destinationInput.value,
     'lat': '',
     'lng': '',
+    'mapImage':'',
     'images': [],
     'toDos': []
   }

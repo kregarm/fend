@@ -49,4 +49,12 @@ function displayTripsFromLocalStorage() {
     section.appendChild(fragement)
 }
 
-export { setTripText, setImages, displayTripsFromLocalStorage }
+function setMapImage(img) {
+    var imagePlaceholder = document.getElementById('map-image');
+    imagePlaceholder.innerHTML='';
+    var image = document.createElement('img');
+    image.setAttribute('src', img);
+    imagePlaceholder.appendChild(image);
+}
+
+export { setTripText, setImages, displayTripsFromLocalStorage, setMapImage }

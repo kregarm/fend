@@ -24,7 +24,7 @@ app.post('/get-geo-data', (req, resp) => {
 
 app.post('/get-weather-data', (req, resp) => {
     let lat = req.body.lat;
-    let lng = req.body.lng
+    let lng = req.body.lng;
     const url = `https://api.darksky.net/forecast/${process.env.DARKSKY_API_KEY}/${lat},${lng}`;
     request(url, { json: true}, (err, res, body) => {
         if (err) {
@@ -43,6 +43,14 @@ app.post('/get-images', (req, resp) => {
         }
         resp.status(200).json(body.hits);
     });
+})
+
+app.post('/get-map', (req, resp) => {
+    let lat = req.body.lat;
+    let lng = req.body.lng;
+    const url = encodeURI(`https://image.maps.ls.hereapi.com/mia/1.6/mapview?apiKey=${process.env.HEREMAPS_API_KEY}&c=${lat},${lng}&t=0&z=5&h=300&w=420&nodot`)
+    //console.log(url)
+    resp.json(url)
 })
 
 app.listen(port, () => {

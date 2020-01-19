@@ -23,4 +23,15 @@ function storeImages (images) {
     };
 }
 
-export{ storeLocationData, storeImages }
+function storeMapImage (img) {
+    const items = { ...localStorage };
+    for (let item in items) {
+        if (item === window.id) {
+            let trip = JSON.parse(localStorage.getItem(item));
+            trip.mapImage = img;
+            localStorage.setItem(item, JSON.stringify(trip));
+        };
+    };
+}
+
+export{ storeLocationData, storeImages, storeMapImage }

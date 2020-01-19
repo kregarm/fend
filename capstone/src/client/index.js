@@ -9,8 +9,9 @@ import { getGeoData } from './js/getGeoData'
 import { postData } from './js/postData'
 import { getWeatherData } from './js/getWeatherData'
 import { getImages } from './js/getImages'
-import { storeLocationData, storeImages } from './js/storeTripData'
-import { setTripText, setImages, displayTripsFromLocalStorage } from './js/setView'
+import { getMap } from './js/getMap'
+import { storeLocationData, storeImages, storeMapImage } from './js/storeTripData'
+import { setTripText, setImages, displayTripsFromLocalStorage, setMapImage } from './js/setView'
 import { tripSwitch } from './js/tripSwitch'
 
 export { 
@@ -24,5 +25,8 @@ export {
     storeImages,
     setTripText,
     setImages,
-    tripSwitch
+    tripSwitch,
+    getMap,
+    setMapImage,
+    storeMapImage
  }
