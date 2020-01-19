@@ -28,7 +28,7 @@ function displayTripsFromLocalStorage() {
     // Retrieve all items from localstorage
     const items = { ...localStorage };
 
-    // Remove the existing select if it exists
+    // Remove the existing select and label if they exist
     if (document.getElementById('trip-switcher')){
         document.getElementById('trip-switcher').remove();
         document.getElementById('tag-label').remove();
