@@ -3,7 +3,11 @@ function setTripText (text) {
 }
 
 function setImages (images) {
-    const imageSection = document.getElementById('images')
+    const imageSection = document.getElementById('images');
+    
+    // Clear any previous images that may exist
+    imageSection.innerHTML='';
+
     const pageFragement = document.createDocumentFragment();
 
     for (let image of images) {
@@ -19,4 +23,30 @@ function setImages (images) {
 
     imageSection.appendChild(pageFragement)
 }
-export { setTripText, setImages }
+
+function displayTripsFromLocalStorage() {
+    // Retrieve all items from localstorage
+    const items = { ...localStorage };
+
+    var section = document.getElementById('body')
+    var select = document.createElement("select");
+    select.setAttribute('onchange', `Client.tripSwitch(this)`)
+    let fragement = document.createDocumentFragment();
+    for (let item in items) {
+
+        // It appears that webpack adds something to the localstorage
+        if (item != 'loglevel:webpack-dev-server') {
+            let trip = JSON.parse(localStorage.getItem(item))
+            var option = document.createElement("option");
+            
+            option.text = `${trip.destination}, ${trip.date}`
+            option.value = item
+            select.add(option)
+        };
+    };
+
+    fragement.appendChild(select)
+    section.appendChild(fragement)
+}
+
+export { setTripText, setImages, displayTripsFromLocalStorage }

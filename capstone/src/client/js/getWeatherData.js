@@ -1,6 +1,5 @@
 function getWeatherData(lat, lng) {
-    console.log(lat, lng)
-    console.log('global id is', window.id)
+    console.log('lat, lng from weatherData', lat, lng)
     Client.postData('http://localhost:8081/get-weather-data', { lat, lng })
       .then((res) => {
         console.log('weather response is', res)

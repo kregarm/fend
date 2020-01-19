@@ -4,14 +4,14 @@ import './styles/head.scss'
 import './styles/images.scss'
 
 import './js/app'
-import { displayTripsFromLocalStorage } from './js/displayTripsFromLocalStorage'
 import { submit } from './js/app'
 import { getGeoData } from './js/getGeoData'
 import { postData } from './js/postData'
 import { getWeatherData } from './js/getWeatherData'
 import { getImages } from './js/getImages'
 import { storeLocationData, storeImages } from './js/storeTripData'
-import { setTripText, setImages } from './js/setView'
+import { setTripText, setImages, displayTripsFromLocalStorage } from './js/setView'
+import { tripSwitch } from './js/tripSwitch'
 
 export { 
     displayTripsFromLocalStorage,
@@ -23,5 +23,6 @@ export {
     storeLocationData,
     storeImages,
     setTripText,
-    setImages
+    setImages,
+    tripSwitch
  }
