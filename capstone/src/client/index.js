@@ -11,7 +11,7 @@ import { getWeatherData } from './js/getWeatherData'
 import { getImages } from './js/getImages'
 import { getMap } from './js/getMap'
 import { storeLocationData, storeImages, storeMapImage } from './js/storeTripData'
-import { setTripText, setImages, displayTripsFromLocalStorage, setMapImage } from './js/setView'
+import { setTripText, setImages, displayTripsFromLocalStorage, setMapImage, displayModal } from './js/setView'
 import { tripSwitch } from './js/tripSwitch'
 
 export { 
@@ -28,5 +28,6 @@ export {
     tripSwitch,
     getMap,
     setMapImage,
-    storeMapImage
+    storeMapImage,
+    displayModal
  }

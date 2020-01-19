@@ -28,17 +28,32 @@ function displayTripsFromLocalStorage() {
     // Retrieve all items from localstorage
     const items = { ...localStorage };
 
+    // Remove the existing select if it exists
+    if (document.getElementById('trip-switcher')){
+        document.getElementById('trip-switcher').remove();
+        document.getElementById('tag-label').remove();
+    };
+
     // Only display trips if the exist
     const numOfItems = Object.keys(items).length;
-
     if (numOfItems > 2) {
         let section = document.getElementById('location-text')
+        let fragement = document.createDocumentFragment();
+
         let select = document.createElement("select");
         select.setAttribute('onchange', `Client.tripSwitch(this)`)
-        let fragement = document.createDocumentFragment();
+        select.setAttribute('id', 'trip-switcher')
+
+        let firstOption = document.createElement('option');
+        firstOption.text = 'Past trips';
+        select.add(firstOption);
+
+        
         let tagForSwither = document.createElement('h4');
         tagForSwither.innerHTML = 'Or select one of you past trips: ';
+        tagForSwither.setAttribute('id', 'tag-label')
         fragement.appendChild(tagForSwither);
+        
         for (let item in items) {
             // It appears that webpack adds something to the localstorage
             if (item != 'loglevel:webpack-dev-server') {
@@ -63,4 +78,19 @@ function setMapImage(img) {
     imagePlaceholder.appendChild(image);
 }
 
-export { setTripText, setImages, displayTripsFromLocalStorage, setMapImage }
+function displayModal(){
+    const modal = `
+    <section id="intro-modal">
+        <h1>Plan your trip</h1>
+        <form>
+            <label for="place">Where to?</label>
+            <input type="text" name="place" id="place">
+            <label for="date">When?</label>
+            <input type="date" id="date">
+        </form>
+        <button id='submit' onclick='Client.submit()'>Submit</button>
+    </section>
+    `;
+    document.body.innerHTML += modal;
+}
+export { setTripText, setImages, displayTripsFromLocalStorage, setMapImage, displayModal }
