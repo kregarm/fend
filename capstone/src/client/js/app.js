@@ -26,7 +26,7 @@ function submit() {
   element.parentNode.removeChild(element);
 
   //Set basic label
-  Client.setTripText(destinationInput.value);
+  Client.setTripText(destinationInput.value, dateInput.value);
 
   //Display a dropdown with all trips stored 
   Client.displayTripsFromLocalStorage();

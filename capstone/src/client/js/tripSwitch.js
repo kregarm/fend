@@ -10,7 +10,7 @@ function tripSwitch(id){
         if (item === window.id) {
             let trip = JSON.parse(localStorage.getItem(item))
             Client.getWeatherData(trip.lat, trip.lng)
-            Client.setTripText(trip.destination)
+            Client.setTripText(trip.destination, trip.date)
             Client.setImages(trip.images)
             Client.setMapImage(trip.mapImage)
         };
