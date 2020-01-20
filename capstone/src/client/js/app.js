@@ -14,7 +14,7 @@ function submit() {
     'lng': '',
     'mapImage':'',
     'images': [],
-    'toDos': []
+    'todos': []
   }
   localStorage.setItem(tripId, JSON.stringify(tripData));
 

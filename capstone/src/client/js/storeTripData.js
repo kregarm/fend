@@ -34,4 +34,24 @@ function storeMapImage (img) {
     };
 }
 
-export{ storeLocationData, storeImages, storeMapImage }
+function storeToDoItem(){
+    const task = document.getElementById('todo-input');
+    const items = { ...localStorage };
+    for (let item in items) {
+        if (item === window.id) {
+            let todoId = uuidv1();
+            let trip = JSON.parse(localStorage.getItem(item));
+            let todo = {
+                'id': todoId,
+                'task': task.value,
+                'done': false
+            }
+            trip.todos.push(todo);
+            localStorage.setItem(item, JSON.stringify(trip));
+        };
+    };
+    task.value = '';
+    // Call displayTodos function
+}
+
+export{ storeLocationData, storeImages, storeMapImage, storeToDoItem }
