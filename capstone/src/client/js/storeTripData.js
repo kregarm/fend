@@ -39,7 +39,7 @@ function storeToDoItem(){
     const items = { ...localStorage };
     for (let item in items) {
         if (item === window.id) {
-            let todoId = uuidv1();
+            let todoId = uuid();
             let trip = JSON.parse(localStorage.getItem(item));
             let todo = {
                 'id': todoId,
@@ -51,7 +51,17 @@ function storeToDoItem(){
         };
     };
     task.value = '';
-    // Call displayTodos function
+    Client.displayTodos();
+}
+
+function editTodoItem() {
+    //get id for todo
+    //get state - is it on of off? -> can I use value/checked anything like it?
+
+    // Loop thru all trips
+    // Loop thru all tasks
+    // Find and update task
+    // Redraw all tasks
 }
 
 export{ storeLocationData, storeImages, storeMapImage, storeToDoItem }

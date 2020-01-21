@@ -13,6 +13,7 @@ function tripSwitch(id){
             Client.setTripText(trip.destination, trip.date)
             Client.setImages(trip.images)
             Client.setMapImage(trip.mapImage)
+            Client.displayTodos();
         };
     };
 }

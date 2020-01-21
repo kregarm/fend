@@ -37,11 +37,12 @@
         <h2>Have something to do before this trip?</h2>
         <input type="text" id="todo-input" placeholder="Enter a todo for this trip">
         <button onclick="Client.storeToDoItem()">Save</button>
+        <div id="todo-display"></div>
     </section>
     <section class="weather" class="container"></section>
     <section id="images" class="container">
     </section>
     <!-- wzrd is used for the UUIDs in localstorage-->
-    <script src="http://wzrd.in/standalone/uuid%2Fv1@latest"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/node-uuid/1.4.8/uuid.js"></script>
 </body>
 </html>

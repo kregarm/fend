@@ -71,8 +71,12 @@ function displayTripsFromLocalStorage() {
 }
 
 function setMapImage(img) {
+
     var imagePlaceholder = document.getElementById('map-image');
+    
+    // Clear if something is already set
     imagePlaceholder.innerHTML = '';
+
     var image = document.createElement('img');
     image.setAttribute('src', img);
     imagePlaceholder.appendChild(image);
@@ -93,4 +97,38 @@ function displayModal(){
     `;
     document.body.innerHTML += modal;
 }
-export { setTripText, setImages, displayTripsFromLocalStorage, setMapImage, displayModal }
+
+function displayTodos(){
+    const items = { ...localStorage };
+    let tripId = window.id;
+
+    const todoSection = document.getElementById('todo-display');
+    todoSection.innerHTML = '';
+    let fragement = document.createDocumentFragment();
+
+    for (let item in items) {
+        if (item === tripId) {
+            let trip = JSON.parse(localStorage.getItem(item))
+            if (trip.todos){
+                for (let todo of trip.todos) {
+                    let input = document.createElement("input");
+                    let label = document.createElement("label")
+                    
+                    label.setAttribute('for', todo.id)
+                    label.innerText = todo.task;
+                    input.setAttribute('type', 'checkbox');
+
+                    if (todo.done === true) {
+                        input.setAttribute('checked', 'checked');
+                    };
+                    
+                    fragement.appendChild(input);
+                    fragement.appendChild(label)
+                };
+            };
+        };
+    };
+
+    todoSection.appendChild(fragement);
+}
+export { setTripText, setImages, displayTripsFromLocalStorage, setMapImage, displayModal, displayTodos }

@@ -1,7 +1,7 @@
 function submit() {
   let dateInput = document.getElementById('date');
   let destinationInput = document.getElementById('place');
-  let tripId = uuidv1();
+  let tripId = uuid();
 
   //Set a global variable tripId for reference
   window.id = tripId;
@@ -18,7 +18,7 @@ function submit() {
   }
   localStorage.setItem(tripId, JSON.stringify(tripData));
 
-  //Call the GeoData function - if successful it later calls the getImages and getWeather functions
+  //Call the GeoData function - if successful it later calls the getImages, getWeather and getMap functions
   Client.getGeoData(destinationInput.value);
 
   //Remove modal
