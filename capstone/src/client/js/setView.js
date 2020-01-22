@@ -112,8 +112,10 @@ function displayTodos(){
             if (trip.todos){
                 for (let todo of trip.todos) {
                     let input = document.createElement("input");
-                    let label = document.createElement("label")
+                    let label = document.createElement("label");
+                    let div = document.createElement('div')
                     
+                    div.setAttribute('class', 'todo-item')
                     label.setAttribute('for', todo.id)
                     label.innerText = todo.task;
                     input.setAttribute('type', 'checkbox');
@@ -124,8 +126,9 @@ function displayTodos(){
                         input.setAttribute('checked', 'checked');
                     };
                     
-                    fragement.appendChild(input);
-                    fragement.appendChild(label)
+                    div.appendChild(input);
+                    div.appendChild(label);
+                    fragement.appendChild(div)
                 };
             };
         };

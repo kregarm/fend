@@ -44,7 +44,7 @@ function storeToDoItem() {
 
     const task = document.getElementById('todo-input');
     const items = { ...localStorage };
-
+    
     for (let item in items) {
         if (item === window.id) {
             let todoId = uuid();
