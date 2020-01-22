@@ -3,7 +3,7 @@ function submit() {
   let destinationInput = document.getElementById('place');
   let tripId = uuid();
 
-  //Set a global variable tripId for reference
+  //Set a global variable on window.id for reference
   window.id = tripId;
 
   //Store data to localStorage
@@ -25,11 +25,14 @@ function submit() {
   let element = document.getElementById('intro-modal');
   element.parentNode.removeChild(element);
 
-  //Set basic label
+  //Set basic label in the header
   Client.setTripText(destinationInput.value, dateInput.value);
 
   //Display a dropdown with all trips stored 
   Client.displayTripsFromLocalStorage();
+
+  //Call this to clear Todos in UI if they exist
+  Client.displayTodos();
 };
 
 export { submit }

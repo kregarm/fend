@@ -117,6 +117,8 @@ function displayTodos(){
                     label.setAttribute('for', todo.id)
                     label.innerText = todo.task;
                     input.setAttribute('type', 'checkbox');
+                    input.setAttribute('id', todo.id)
+                    input.setAttribute('onclick', `Client.toggleTodo('${todo.id}')`)
 
                     if (todo.done === true) {
                         input.setAttribute('checked', 'checked');
