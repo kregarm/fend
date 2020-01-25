@@ -9,6 +9,11 @@ const app = express();
 app.use(cors());
 app.use(bodyParser.urlencoded({ extended:true }));
 app.use(bodyParser.json());
+app.use(express.static('dist'));
+
+app.get('/', (req, res) => {
+    res.sendFile('dist/index.html')
+});
 
 app.post('/get-geo-data', (req, resp) => {
     let location = req.body.location;
