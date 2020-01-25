@@ -8,7 +8,7 @@ import './js/app'
 import { submit } from './js/app'
 import { getGeoData } from './js/getGeoData'
 import { postData } from './js/postData'
-import { getWeatherData } from './js/getWeatherData'
+import { getCurrentWeekForecast } from './js/getWeatherData'
 import { getImages } from './js/getImages'
 import { getMap } from './js/getMap'
 import { storeLocationData, storeImages, storeMapImage, storeToDoItem, toggleTodo } from './js/storeTripData'
@@ -19,7 +19,7 @@ export {
     displayTripsFromLocalStorage,
     submit,
     getGeoData,
-    getWeatherData,
+    getCurrentWeekForecast,
     postData,
     getImages,
     storeLocationData,

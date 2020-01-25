@@ -1,38 +1,58 @@
 function submit() {
   let dateInput = document.getElementById('date');
   let destinationInput = document.getElementById('place');
-  let tripId = uuid();
+  let today = Date.parse(new Date());
 
-  //Set a global variable on window.id for reference
-  window.id = tripId;
+  //Calculate if the date is in the future or past
+  //Only proceed if a date in the future is selected!
+  if (today - Date.parse(dateInput.value) > 0) {
 
-  //Store data to localStorage
-  let tripData = {
-    'date': dateInput.value,
-    'destination': destinationInput.value,
-    'lat': '',
-    'lng': '',
-    'mapImage':'',
-    'images': [],
-    'todos': []
-  }
-  localStorage.setItem(tripId, JSON.stringify(tripData));
+    alert('Cannot select a past date. Date must be in the future.');
 
-  //Call the GeoData function - if successful it later calls the getImages, getWeather and getMap functions
-  Client.getGeoData(destinationInput.value);
+  } else {
 
-  //Remove modal
-  let element = document.getElementById('intro-modal');
-  element.parentNode.removeChild(element);
+    let tripId = uuid();
 
-  //Set basic label in the header
-  Client.setTripText(destinationInput.value, dateInput.value);
+    //Set a global variable on window.id for reference
+    window.id = tripId;
 
-  //Display a dropdown with all trips stored 
-  Client.displayTripsFromLocalStorage();
+    //Store data to localStorage
+    let tripData = {
+      'date': dateInput.value,
+      'epochDate': Date.parse(dateInput.value),
+      'destination': destinationInput.value,
+      'lat': '',
+      'lng': '',
+      'mapImage': '',
+      'images': [],
+      'todos': []
+    };
 
-  //Call this to clear Todos in UI if they exist
-  Client.displayTodos();
+    localStorage.setItem(tripId, JSON.stringify(tripData));
+
+    //Calculate if date is within the week or not
+    //432000000 is the value of 5 days in milliseconds
+    var slectedDate = Date.parse(dateInput.value);
+    if (slectedDate - today > 432000000) {
+      //Call the GeoData function - if successful it later calls the getImages, getWeather and getMap functions
+      Client.getGeoData(destinationInput.value, 'anyWeek');
+    } else {
+      Client.getGeoData(destinationInput.value, 'currentWeek');
+    }
+
+    //Remove modal
+    let element = document.getElementById('intro-modal');
+    element.parentNode.removeChild(element);
+
+    //Set basic label in the header
+    Client.setTripText(destinationInput.value, dateInput.value);
+
+    //Display a dropdown with all trips stored 
+    Client.displayTripsFromLocalStorage();
+
+    //Call this to clear Todos in UI if they exist
+    Client.displayTodos();
+  };
 };
 
 export { submit }

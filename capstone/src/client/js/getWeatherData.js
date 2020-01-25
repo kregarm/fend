@@ -1,4 +1,4 @@
-function getWeatherData(lat, lng) {
+function getCurrentWeekForecast(lat, lng) {
     console.log('lat, lng from weatherData', lat, lng)
     Client.postData('http://localhost:8081/get-weather-data', { lat, lng })
       .then((res) => {
@@ -8,4 +8,4 @@ function getWeatherData(lat, lng) {
       });
   };
 
-export { getWeatherData }
+export { getCurrentWeekForecast }

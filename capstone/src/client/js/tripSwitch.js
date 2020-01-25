@@ -6,10 +6,9 @@ function tripSwitch(id){
     // Find the old trip in localstorage
     const items = { ...localStorage };
     for (let item in items) {
-        // It appears that webpack adds something to the localstorage
         if (item === window.id) {
             let trip = JSON.parse(localStorage.getItem(item))
-            Client.getWeatherData(trip.lat, trip.lng)
+            Client.getCurrentWeekForecast(trip.lat, trip.lng)
             Client.setTripText(trip.destination, trip.date)
             Client.setImages(trip.images)
             Client.setMapImage(trip.mapImage)
