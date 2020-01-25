@@ -144,25 +144,29 @@ function displayWeatherForecast(data){
     let fragement = document.createDocumentFragment();
     let headerText = document.createElement('h2');
     headerText.innerHTML = `Summary for this week: ${data.summary}`;
+    let foreCastPlacehodler = document.createElement('div');
+    foreCastPlacehodler.setAttribute('id', 'forecast-placeholder')
     fragement.appendChild(headerText)
 
     for (let entry of data.data) {
-        let div = document.createElement('div')
-        let summaryPar = document.createElement('p')
-        summaryPar.innerHTML = entry.summary
-        let datePar = document.createElement('p')
-        datePar.innerHTML = entry.time;
+        let div = document.createElement('div');
+        div.setAttribute('class', 'forecast-element');
+        let summaryPar = document.createElement('p');
+        summaryPar.innerHTML = entry.summary;
+        let datePar = document.createElement('p');
+        let friendlyTime = new Date(entry.time * 1000);
+        datePar.innerHTML = friendlyTime.toDateString();
         let tempPar = document.createElement('p');
-        tempPar.innerHTML = `Tempreature span throughout the day: ${entry.temperatureLow} - ${entry.temperatureHigh} `
+        tempPar.innerHTML = `Daily temperatures between: ${entry.temperatureLow} and ${entry.temperatureHigh}`;
 
         div.appendChild(datePar);
         div.appendChild(tempPar)
         div.appendChild(summaryPar);
-
-        fragement.appendChild(div)
+        foreCastPlacehodler.appendChild(div)
     }
     
-    section.appendChild(fragement)
+    section.appendChild(fragement);
+    section.appendChild(foreCastPlacehodler);
 }
 function displayTimeMachineForecast(data){
     let section = document.getElementById('weather');
@@ -170,7 +174,7 @@ function displayTimeMachineForecast(data){
 
     let fragement = document.createDocumentFragment();
     let headerText = document.createElement('h2');
-    headerText.innerHTML = `Summary for the selected date: ${data.summary}, temperature: ${data.apparentTemperature}`;
+    headerText.innerHTML = `Weather summary for the selected date: ${data.summary}, temperature: ${data.apparentTemperature}`;
     fragement.appendChild(headerText);
     section.appendChild(fragement);
 }
