@@ -22,10 +22,23 @@ app.post('/get-geo-data', (req, resp) => {
     });
 })
 
-app.post('/get-weather-data', (req, resp) => {
+app.post('/get-weather-forecast', (req, resp) => {
     let lat = req.body.lat;
     let lng = req.body.lng;
     const url = `https://api.darksky.net/forecast/${process.env.DARKSKY_API_KEY}/${lat},${lng}`;
+    request(url, { json: true}, (err, res, body) => {
+        if (err) {
+            console.log(err);
+        }
+        resp.status(200).json(body);
+    });
+})
+
+app.post('/get-weather-forecast-timemachine', (req, resp) => {
+    let lat = req.body.lat;
+    let lng = req.body.lng;
+    let time = req.body.time;
+    const url = `https://api.darksky.net/forecast/${process.env.DARKSKY_API_KEY}/${lat},${lng},${time}`;
     request(url, { json: true}, (err, res, body) => {
         if (err) {
             console.log(err);

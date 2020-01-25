@@ -8,7 +8,7 @@ import './js/app'
 import { submit } from './js/app'
 import { getGeoData } from './js/getGeoData'
 import { postData } from './js/postData'
-import { getCurrentWeekForecast } from './js/getWeatherData'
+import { getCurrentWeekForecast, getTimeMachineForecast } from './js/getWeatherData'
 import { getImages } from './js/getImages'
 import { getMap } from './js/getMap'
 import { storeLocationData, storeImages, storeMapImage, storeToDoItem, toggleTodo } from './js/storeTripData'
@@ -33,5 +33,6 @@ export {
     displayModal,
     storeToDoItem,
     displayTodos,
-    toggleTodo
+    toggleTodo,
+    getTimeMachineForecast
  }

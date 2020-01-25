@@ -16,7 +16,7 @@ function tripSwitch(id){
             if (trip.epochDate - today > 0 && trip.epochDate - today < 432000000) {
                 Client.getCurrentWeekForecast(trip.lat, trip.lng);
               } else {
-                console.log('tbd');
+                Client.getTimeMachineForecast(trip.lat, trip.lng, trip.epochDate/1000);
             };
         };
     };
