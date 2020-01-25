@@ -12,7 +12,7 @@ import { getCurrentWeekForecast, getTimeMachineForecast } from './js/getWeatherD
 import { getImages } from './js/getImages'
 import { getMap } from './js/getMap'
 import { storeLocationData, storeImages, storeMapImage, storeToDoItem, toggleTodo } from './js/storeTripData'
-import { setTripText, setImages, displayTripsFromLocalStorage, setMapImage, displayModal, displayTodos } from './js/setView'
+import { setTripText, setImages, displayTripsFromLocalStorage, setMapImage, displayModal, displayTodos, displayWeatherForecast, displayTimeMachineForecast } from './js/setView'
 import { tripSwitch } from './js/tripSwitch'
 
 export { 
@@ -34,5 +34,7 @@ export {
     storeToDoItem,
     displayTodos,
     toggleTodo,
-    getTimeMachineForecast
+    getTimeMachineForecast,
+    displayWeatherForecast,
+    displayTimeMachineForecast
  }

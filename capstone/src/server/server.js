@@ -30,7 +30,7 @@ app.post('/get-weather-forecast', (req, resp) => {
         if (err) {
             console.log(err);
         }
-        resp.status(200).json(body);
+        resp.status(200).json(body.daily);
     });
 })
 
@@ -43,7 +43,7 @@ app.post('/get-weather-forecast-timemachine', (req, resp) => {
         if (err) {
             console.log(err);
         }
-        resp.status(200).json(body);
+        resp.status(200).json(body.currently);
     });
 })
 

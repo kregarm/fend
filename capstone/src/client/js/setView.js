@@ -136,4 +136,42 @@ function displayTodos(){
 
     todoSection.appendChild(fragement);
 }
-export { setTripText, setImages, displayTripsFromLocalStorage, setMapImage, displayModal, displayTodos }
+
+function displayWeatherForecast(data){
+    let section = document.getElementById('weather');
+    section.innerHTML = '';
+
+    let fragement = document.createDocumentFragment();
+    let headerText = document.createElement('h2');
+    headerText.innerHTML = `Summary for this week: ${data.summary}`;
+    fragement.appendChild(headerText)
+
+    for (let entry of data.data) {
+        let div = document.createElement('div')
+        let summaryPar = document.createElement('p')
+        summaryPar.innerHTML = entry.summary
+        let datePar = document.createElement('p')
+        datePar.innerHTML = entry.time;
+        let tempPar = document.createElement('p');
+        tempPar.innerHTML = `Tempreature span throughout the day: ${entry.temperatureLow} - ${entry.temperatureHigh} `
+
+        div.appendChild(datePar);
+        div.appendChild(tempPar)
+        div.appendChild(summaryPar);
+
+        fragement.appendChild(div)
+    }
+    
+    section.appendChild(fragement)
+}
+function displayTimeMachineForecast(data){
+    let section = document.getElementById('weather');
+    section.innerHTML = '';
+
+    let fragement = document.createDocumentFragment();
+    let headerText = document.createElement('h2');
+    headerText.innerHTML = `Summary for the selected date: ${data.summary}, temperature: ${data.apparentTemperature}`;
+    fragement.appendChild(headerText);
+    section.appendChild(fragement);
+}
+export { setTripText, setImages, displayTripsFromLocalStorage, setMapImage, displayModal, displayTodos, displayWeatherForecast, displayTimeMachineForecast }
