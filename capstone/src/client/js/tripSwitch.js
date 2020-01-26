@@ -1,4 +1,5 @@
 function tripSwitch(id){
+    console.log('id is, ', id)
 
     // Switch global id to a previously saved trip
     window.id = id.value;
@@ -8,6 +9,7 @@ function tripSwitch(id){
     const items = { ...localStorage };
     for (let item in items) {
         if (item === window.id) {
+            console.log('found trip')
             let trip = JSON.parse(localStorage.getItem(item))
             Client.setTripText(trip.destination, trip.date)
             Client.setImages(trip.images)

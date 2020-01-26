@@ -34,9 +34,14 @@ function displayTripsFromLocalStorage() {
         document.getElementById('tag-label').remove();
     };
 
-    // Only display trips if the exist
+    /*
+    Only display trips if the exist
+    This won't work correctly in dev env if you don't have
+    at least two trips stored as webpack ads it's own entry
+    to localstorage. This isn't an issue with prod build.
+    */
     const numOfItems = Object.keys(items).length;
-    if (numOfItems > 2) {
+    if (numOfItems > 0) {
         let section = document.getElementById('location-text')
         let fragement = document.createDocumentFragment();
 
@@ -93,6 +98,7 @@ function displayModal(){
             <input type="date" id="date">
         </form>
         <button id='submit' onclick='Client.submit()'>Submit</button>
+        <button id='dismiss' onclick="Client.dismissModal()">Dismiss</button>
     </section>
     `;
     document.body.innerHTML += modal;

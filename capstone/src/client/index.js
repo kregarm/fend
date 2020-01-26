@@ -18,6 +18,7 @@ import { getMap } from './js/getMap'
 import { storeLocationData, storeImages, storeMapImage, storeToDoItem, toggleTodo } from './js/storeTripData'
 import { setTripText, setImages, displayTripsFromLocalStorage, setMapImage, displayModal, displayTodos, displayWeatherForecast, displayTimeMachineForecast } from './js/setView'
 import { tripSwitch } from './js/tripSwitch'
+import { dismissModal } from './js/dismissModal'
 
 export { 
     displayTripsFromLocalStorage,
@@ -40,5 +41,6 @@ export {
     toggleTodo,
     getTimeMachineForecast,
     displayWeatherForecast,
-    displayTimeMachineForecast
+    displayTimeMachineForecast,
+    dismissModal
  }
