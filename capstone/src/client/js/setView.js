@@ -13,7 +13,7 @@ function setImages(images) {
 
     for (let image of images) {
         const divTag = document.createElement('div');
-        divTag.setAttribute('class', 'image-placeholder')
+        divTag.setAttribute('class', 'image-placeholder');
         const imgTag = document.createElement('img');
         imgTag.setAttribute('src', image.webformatURL);
         imgTag.setAttribute('alt', image.tags);
@@ -42,36 +42,35 @@ function displayTripsFromLocalStorage() {
     */
     const numOfItems = Object.keys(items).length;
     if (numOfItems > 0) {
-        let section = document.getElementById('location-text')
+        let section = document.getElementById('location-text');
         let fragement = document.createDocumentFragment();
 
         let select = document.createElement("select");
-        select.setAttribute('onchange', `Client.tripSwitch(this)`)
-        select.setAttribute('id', 'trip-switcher')
+        select.setAttribute('onchange', `Client.tripSwitch(this)`);
+        select.setAttribute('id', 'trip-switcher');
 
         let firstOption = document.createElement('option');
         firstOption.text = 'Past trips';
         select.add(firstOption);
 
-        
         let tagForSwither = document.createElement('h4');
         tagForSwither.innerHTML = 'Or select one of you past trips: ';
-        tagForSwither.setAttribute('id', 'tag-label')
+        tagForSwither.setAttribute('id', 'tag-label');
         fragement.appendChild(tagForSwither);
         
         for (let item in items) {
             // It appears that webpack adds something to the localstorage
             if (item != 'loglevel:webpack-dev-server') {
-                let trip = JSON.parse(localStorage.getItem(item))
+                let trip = JSON.parse(localStorage.getItem(item));
                 var option = document.createElement("option");
-                option.text = `${trip.destination}, ${trip.date}`
-                option.value = item
-                select.add(option)
+                option.text = `${trip.destination}, ${trip.date}`;
+                option.value = item;
+                select.add(option);
             };
         };
 
-        fragement.appendChild(select)
-        section.appendChild(fragement)
+        fragement.appendChild(select);
+        section.appendChild(fragement);
     }
 }
 
@@ -114,19 +113,19 @@ function displayTodos(){
 
     for (let item in items) {
         if (item === tripId) {
-            let trip = JSON.parse(localStorage.getItem(item))
+            let trip = JSON.parse(localStorage.getItem(item));
             if (trip.todos){
                 for (let todo of trip.todos) {
                     let input = document.createElement("input");
                     let label = document.createElement("label");
-                    let div = document.createElement('div')
+                    let div = document.createElement('div');
                     
-                    div.setAttribute('class', 'todo-item')
-                    label.setAttribute('for', todo.id)
+                    div.setAttribute('class', 'todo-item');
+                    label.setAttribute('for', todo.id);
                     label.innerText = todo.task;
                     input.setAttribute('type', 'checkbox');
-                    input.setAttribute('id', todo.id)
-                    input.setAttribute('onclick', `Client.toggleTodo('${todo.id}')`)
+                    input.setAttribute('id', todo.id);
+                    input.setAttribute('onclick', `Client.toggleTodo('${todo.id}')`);
 
                     if (todo.done === true) {
                         input.setAttribute('checked', 'checked');
@@ -134,7 +133,7 @@ function displayTodos(){
                     
                     div.appendChild(input);
                     div.appendChild(label);
-                    fragement.appendChild(div)
+                    fragement.appendChild(div);
                 };
             };
         };
@@ -151,8 +150,8 @@ function displayWeatherForecast(data){
     let headerText = document.createElement('h2');
     headerText.innerHTML = `Summary for this week: ${data.summary}`;
     let foreCastPlacehodler = document.createElement('div');
-    foreCastPlacehodler.setAttribute('id', 'forecast-placeholder')
-    fragement.appendChild(headerText)
+    foreCastPlacehodler.setAttribute('id', 'forecast-placeholder');
+    fragement.appendChild(headerText);
 
     for (let entry of data.data) {
         let div = document.createElement('div');
@@ -166,9 +165,9 @@ function displayWeatherForecast(data){
         tempPar.innerHTML = `Daily temperatures between: ${entry.temperatureLow} and ${entry.temperatureHigh}`;
 
         div.appendChild(datePar);
-        div.appendChild(tempPar)
+        div.appendChild(tempPar);
         div.appendChild(summaryPar);
-        foreCastPlacehodler.appendChild(div)
+        foreCastPlacehodler.appendChild(div);
     }
     
     section.appendChild(fragement);
@@ -184,4 +183,11 @@ function displayTimeMachineForecast(data){
     fragement.appendChild(headerText);
     section.appendChild(fragement);
 }
-export { setTripText, setImages, displayTripsFromLocalStorage, setMapImage, displayModal, displayTodos, displayWeatherForecast, displayTimeMachineForecast }
+export {setTripText, 
+        setImages, 
+        displayTripsFromLocalStorage, 
+        setMapImage, 
+        displayModal, 
+        displayTodos, 
+        displayWeatherForecast, 
+        displayTimeMachineForecast}

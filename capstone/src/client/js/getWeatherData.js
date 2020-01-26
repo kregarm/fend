@@ -2,7 +2,7 @@ function getCurrentWeekForecast(lat, lng) {
     console.log('lat, lng from weatherData', lat, lng)
     Client.postData('http://localhost:8081/get-weather-forecast', { lat, lng })
       .then((res) => {
-        Client.displayWeatherForecast(res)
+        Client.displayWeatherForecast(res);
       }).catch((err) => {
         console.log(err);
       });

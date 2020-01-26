@@ -35,10 +35,10 @@ function submit() {
     var slectedDate = Date.parse(dateInput.value);
     if (slectedDate - today > 432000000) {
       //Call the GeoData function - if successful it later calls the getImages, getWeather and getMap functions
-      Client.getGeoData(destinationInput.value, 'anyWeek', slectedDate/1000);
+      Client.getGeoData(destinationInput.value, 'anyWeek', slectedDate / 1000);
     } else {
       Client.getGeoData(destinationInput.value, 'currentWeek', null);
-    }
+    };
 
     //Remove modal
     let element = document.getElementById('intro-modal');

@@ -20,7 +20,7 @@ function storeImages(images) {
         if (item === window.id) {
             let trip = JSON.parse(localStorage.getItem(item));
             for (let image of images) {
-                trip.images.push(image)
+                trip.images.push(image);
             }
             localStorage.setItem(item, JSON.stringify(trip));
         };
@@ -53,7 +53,7 @@ function storeToDoItem() {
                 'id': todoId,
                 'task': task.value,
                 'done': false
-            }
+            };
             trip.todos.push(todo);
             localStorage.setItem(item, JSON.stringify(trip));
         };
@@ -70,7 +70,7 @@ function toggleTodo(id) {
     for (let item in items) {
         //loop and find correct trip
         if (item === window.id) {
-            let trip = JSON.parse(localStorage.getItem(item))
+            let trip = JSON.parse(localStorage.getItem(item));
             if (trip.todos) {
                 //loop and find correct todo
                 for (let todo of trip.todos) {
@@ -80,7 +80,7 @@ function toggleTodo(id) {
                             todo.done = false;
                         } else {
                             todo.done = true;
-                        }
+                        };
                         localStorage.setItem(item, JSON.stringify(trip));
                     };
                 };
