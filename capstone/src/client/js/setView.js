@@ -41,7 +41,7 @@ function displayTripsFromLocalStorage() {
     to localstorage. This isn't an issue with prod build.
     */
     const numOfItems = Object.keys(items).length;
-    if (numOfItems > 0) {
+    if (numOfItems > 1) {
         let section = document.getElementById('location-text');
         let fragement = document.createDocumentFragment();
 

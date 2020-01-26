@@ -13,9 +13,10 @@ function getGeoData(location, tripWeek, date) {
         Client.getImages(location);
         Client.getMap(res.lat, res.lng);
       } else {
+
         Client.displayModal();
         alert('Something went wrong, please try again');
-      }
+      };
     }).catch((err) => {
         Client.displayModal();
         alert('Something went wrong, please try again')
